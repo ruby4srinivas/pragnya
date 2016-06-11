@@ -1,0 +1,15 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  username: <%= Figaro.env.mysql_user %>
+  password: <%= Figaro.env.mysql_pwd %>
+
+development:
+  <<: *default
+  database: pragnya_development
+
+
+production:
+  <<: *default
+  database: pragnya_production
