@@ -1,6 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
+# for active records
 require 'rails/all'
+
+
+
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,3 +29,16 @@ module Pragnya
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+
+#mongoid
+
+# require "rails"
+# require "active_model/railtie"
+# require "active_job/railtie"
+# require "action_controller/railtie"
+# require "action_mailer/railtie"
+# require "action_view/railtie"
+# require "sprockets/railtie"
+# require "rails/test_unit/railtie"
+# Bundler.require(*Rails.groups)

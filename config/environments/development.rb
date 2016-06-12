@@ -20,7 +20,12 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
+
+  #FOR ACTIVE RECORD
+  #COMMENT THIS FOR MONGOID
   config.active_record.migration_error = :page_load
+
+
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -38,8 +43,37 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+#for local testing
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
+#
+# for real time testing
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default_url_options = { host: "localhost:3000"}# ENV['MAIL_HOST'] }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     user_name:      ENV['SENDMAIL_USERNAME'],
+  #     password:       ENV['SENDMAIL_PASSWORD'],
+  #     domain:        'gmail.com',#ENV['MAIL_HOST'],
+  #     address:       'smtp.gmail.com',
+  #     port:          '587',
+  #     authentication: :plain,
+  #     enable_starttls_auto: true
+  # }
 
+  config.action_mailer.default_url_options = { host: '0.0.0.0:8080' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.mandrillapp.com',
+      port: 2525,
+      enable_starttls_auto: true,
+      user_name: ENV['SENDMAIL_USERNAME'],
+      password:  ENV['SENDMAIL_PASSWORD'],
+      authentication: 'login'
+  }
 end

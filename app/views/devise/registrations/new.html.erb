@@ -11,15 +11,15 @@
 
   <div class="field">
     <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control estimate-password' %>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+        <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",class: 'form-control estimate-password' %>
   </div>
 
   <div class="actions">

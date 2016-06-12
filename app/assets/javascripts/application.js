@@ -17,4 +17,5 @@
 // require twitter/bootstrap
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require global
 //= require_tree .
